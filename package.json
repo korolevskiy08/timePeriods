@@ -9,8 +9,11 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@types/react-swipe": "^6.0.2",
     "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react-dom": "^18.2.0",
+    "swiper": "^9.0.5",
+    "vite-plugin-sass-dts": "^1.2.15"
   },
   "devDependencies": {
     "@types/react": "^18.0.27",

@@ -1,34 +1,54 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import './App.css'
+import './App.scss'
+import lineGradient from "./assets/lineGradient.png";
+import sliderArrowLeft from "./assets/sliderArrowLeft.png";
+import sliderArrowRight from "./assets/sliderArrowRight.png";
+import {useState} from "react";
+import 'swiper/scss';
+import 'swiper/scss/navigation';
+import {SwiperNav} from "./features/SwiperNav/SwiperNav";
+
 
 function App() {
-  const [count, setCount] = useState(0)
+    const [page, setPage] = useState<string>('1')
 
-  return (
-    <div className="App">
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src="/vite.svg" className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://reactjs.org" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </div>
-  )
+    return (
+        <div className='container'>
+            <div className='line'/>
+            <div className='line line-center'/>
+            <div className='line line-right'/>
+
+            <div className='title-block'>
+                <img src={lineGradient} alt="gradient"/>
+                <h1 className='title'>Исторические даты</h1>
+            </div>
+
+            <div className='circle'>
+                <button className='filterButton' onClick={() => setPage('1')}>1</button>
+                <button className='filterButton' onClick={() => setPage('2')}>2</button>
+                <button className='filterButton' onClick={() => setPage('3')}>3</button>
+                <button className='filterButton' onClick={() => setPage('4')}>4</button>
+                <button className='filterButton' onClick={() => setPage('5')}>5</button>
+            </div>
+            <div className='date'>
+                <p className='start-date'>2015</p>
+                <p className='end-date'>2022</p>
+            </div>
+            <div className='slider-container'>
+                <span className='count'>06/06</span>
+                <div className='buttons'>
+                    <button className='button'>
+                        <img className='sliderArrow' src={sliderArrowLeft} alt="arrow"/>
+                    </button>
+                    <button className='button'>
+                        <img className='sliderArrow' src={sliderArrowRight} alt="arrow"/>
+                    </button>
+                </div>
+                <SwiperNav
+                    page={page}
+                />
+            </div>
+        </div>
+    )
 }
 
 export default App
