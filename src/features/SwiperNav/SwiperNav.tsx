@@ -1,13 +1,14 @@
 import {FC} from 'react';
 import {Swiper, SwiperSlide, useSwiper} from "swiper/react";
 import './swiperNav.scss'
-import {dateInfo} from "../../array";
+import {dateInfo} from "../../state";
 
 type UseSwiperType = {
-    page: string;
+    page: number;
 }
 
 export const SwiperNav: FC<UseSwiperType> = ({page}) => {
+    console.log(dateInfo[0])
     const swiper = useSwiper()
     return (
         <div className='slider'>
@@ -18,7 +19,7 @@ export const SwiperNav: FC<UseSwiperType> = ({page}) => {
                 className='swiper sliderItemBlock'
                 navigation
             >
-                {page in dateInfo &&
+                {
                     dateInfo[page].map(el => (
                         <SwiperSlide key={el.id} className='sliderItem'>
                             <h2 className='sliderItemYear'>{el.year}</h2>
@@ -27,7 +28,7 @@ export const SwiperNav: FC<UseSwiperType> = ({page}) => {
                     ))
                 }
             </Swiper>
-            <div slot='container-end' onClick={() => swiper.slidePrev()} />
+            <div slot='container-end' onClick={() => swiper.slidePrev()} className={'buttonSliderNext'} />
         </div>
     );
 };

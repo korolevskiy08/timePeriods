@@ -1,15 +1,11 @@
-export type DateInfoType = {
-    [key: string]: InfoType[]
-}
-
 export type InfoType = {
     id: number;
     year: number;
     text: string;
 }
 
-export const dateInfo: DateInfoType = {
-    ['1']: [
+export const dateInfo: InfoType[][] = [
+    [
         {
             id: 1,
             year: 2015,
@@ -41,7 +37,7 @@ export const dateInfo: DateInfoType = {
             text: '13 сентября — частное солнечное затмение, видимое в Южной Африке и части Антарктиды'
         },
     ],
-    ['2']: [
+    [
         {
             id: 1,
             year: 1901,
@@ -73,7 +69,7 @@ export const dateInfo: DateInfoType = {
             text: 'Джозуэ Кардуччи. Не только за глубокие знания и критичный ум, а прежде всего за творческую энергию, свежесть стиля и лирическую силу, характерную для его поэтических шедевров'
         },
     ],
-    ['3']: [
+    [
         {
             id: 1,
             year: 1901,
@@ -105,7 +101,7 @@ export const dateInfo: DateInfoType = {
             text: 'Манне Сигбан. За открытия и исследования в области рентгеновской спектроскопии'
         },
     ],
-    ['4']: [
+    [
         {
             id: 1,
             year: 1958,
@@ -132,7 +128,7 @@ export const dateInfo: DateInfoType = {
             text: ' Жизе́ль Но́улз-Картер. американская певица в стиле R’n’B, актриса, танцовщица, музыкальный продюсер.'
         },
     ],
-    ['5']: [
+    [
         {
             id: 1,
             year: 2015,
@@ -164,5 +160,5 @@ export const dateInfo: DateInfoType = {
             text: '13 сентября — частное солнечное затмение, видимое в Южной Африке и части Антарктиды'
         },
     ],
-}
+    ]
 

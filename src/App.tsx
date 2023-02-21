@@ -9,7 +9,7 @@ import {SwiperNav} from "./features/SwiperNav/SwiperNav";
 
 
 function App() {
-    const [page, setPage] = useState<string>('1')
+    const [page, setPage] = useState<number>(1)
 
     return (
         <div className='container'>
@@ -23,11 +23,11 @@ function App() {
             </div>
 
             <div className='circle'>
-                <button className='filterButton' onClick={() => setPage('1')}>1</button>
-                <button className='filterButton' onClick={() => setPage('2')}>2</button>
-                <button className='filterButton' onClick={() => setPage('3')}>3</button>
-                <button className='filterButton' onClick={() => setPage('4')}>4</button>
-                <button className='filterButton' onClick={() => setPage('5')}>5</button>
+                <button className='filterButton' onClick={() => setPage(0)}>1</button>
+                <button className='filterButton' onClick={() => setPage(1)}>2</button>
+                <button className='filterButton' onClick={() => setPage(2)}>3</button>
+                <button className='filterButton' onClick={() => setPage(3)}>4</button>
+                <button className='filterButton' onClick={() => setPage(4)}>5</button>
             </div>
             <div className='date'>
                 <p className='start-date'>2015</p>
